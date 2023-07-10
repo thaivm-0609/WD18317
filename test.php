@@ -66,17 +66,17 @@
     //         break;
     //     default: echo 'day la default';
     // }
-        // $a = 0;
-        // $b = match($a) {
-        //     1 => 'True',
-        //     2 => 'False',
-        //     // default => 'default'
-        // };
-        // echo $b;
+    $a = 0;
+    $b = match($a) {
+        1 => 'True',
+        2 => 'False',
+        // default => 'default'
+    };
+    echo $b;
 
-        // switch($a) {
-        //     case 1: echo 'True'; break;
-        //     case 2: echo 'False'; break;
-        //     default: echo 'default';
-        // };
+    switch($a) {
+        case 1: echo 'True'; break;
+        case 2: echo 'False'; break;
+        default: echo 'default';
+    };
 ?>
