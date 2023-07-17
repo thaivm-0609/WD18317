@@ -8,6 +8,8 @@
 </head>
 <body>
     <?php
+    $date = date('d-m-Y');
+
         $users = [
             [
                 'name' => 'thai1',
@@ -32,6 +34,7 @@
             ],
         ];
     ?>
+    <h1> <?php echo $date ?> </h1>
     <table>
         <tr>
             <th>Name</th>
