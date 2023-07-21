@@ -2,6 +2,8 @@
     $userName = $_GET['username'];
     $email = $_GET['email'];
 
+    $favorite = $_REQUEST['favorite']; //su dung request de lay data
+    // print_r($favorite);
     if (strlen($_GET['username']) < 3) {
         echo 'username khong duco ngan hon 3 ly tu';
     }
