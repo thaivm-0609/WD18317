@@ -14,6 +14,13 @@
         <label for="user">Email
             <input type="email" name="email">
         </label>
+        <!-- truyen array qua form -->
+        <label for="favorite">Ban thich gi</label>
+        <select name="favorite[]" multiple>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
         <input type="submit">
     </form>
 </body>
