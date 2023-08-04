@@ -35,7 +35,7 @@
             // $fileSize = $_FILES['image']['size']; //lấy kiểu file được upload lên với ['size']
             move_uploaded_file($temp, $dest); //chuyen file tu bo nho tam sang thu muc muon luu tru
 
-            //lưu dữ liệu vào database
+            //lay du lieu ng dugn nhap tu form
             $number = $_POST['number'];
             $image = $dest; //lưu đường dẫn lưu ảnh vào trường image
             $totalPassenger = $_POST['total_passengers'];
