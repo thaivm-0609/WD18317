@@ -1,7 +1,8 @@
 <?php
     require 'connect.php'; //ket noi vs db
 
-    $flights = $conn->query("SELECT * FROM flights")->fetchAll(); //query du lieu
+    $flights = $conn->query("SELECT * FROM flights
+        LEFT JOIN airlines ON airlines.airline_id = flights.airline_id")->fetchAll(); //query du lieu
 ?>
 
 <!DOCTYPE html>
@@ -11,6 +12,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>List flights</title>
+    <script type="application/javascript">
+        function confirmDelete() {
+            return confirm('Bạn có chắc chắn muốn xoá ko?');
+        }
+    </script>
 </head>
 <body>
     <button><a href="./create.php">Create new flight</a></button>
@@ -31,10 +37,15 @@
                 <td><img src="<?=$flight['image']?>" height="50"></td>
                 <td><?=$flight['total_passengers']?></td>
                 <td><?=$flight['description']?></td>
-                <td><?=$flight['airline_id']?></td>
+                <td><?=$flight['airline_name']?></td>
                 <td>
-                    <a>Edit</a>
-                    <a>Delete</a>   
+                    <a href="./edit.php?id=<?=$flight['flight_id']?>">Edit</a>
+                    <a 
+                        href="./delete.php?id=<?=$flight['flight_id']?>"
+                        onclick="return confirmDelete()"
+                    >
+                        Delete
+                    </a>   
                 </td>
             </tr>
         <?php } ?>
